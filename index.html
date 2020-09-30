@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whatsapp Share</title>
+    
+</head>
+<body>
+    <script>
+
+        // url parameter
+        const urlP = () => {
+            // ?name=&phone=
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+
+            if(urlParams.has('name') && urlParams.has('phone')) {
+                const name = urlParams.get('name');
+                const phone = urlParams.get('phone');
+                greating(name,phone);
+
+            } else {
+                alert('infome seu nome e telefone');
+            }
+            
+        }
+        const greating = (name, phone) => {
+            const now = new Date();
+            hours = now.getHours();
+            let great;
+
+            if(hours >= 0 && hours < 12) {
+                great = 'bom dia';
+            } else if (hours >= 12 && hours < 18) {
+                great = 'boa tarde';
+            } else if (hours >= 18 && hours < 24) {
+                great = 'boa noite';
+            }
+            window.location.replace(`https://wa.me/${phone}?text=Oi%20${name},%20${great}`);
+        }
+        
+        urlP();
+        
+    </script>
+</body>
+</html>
