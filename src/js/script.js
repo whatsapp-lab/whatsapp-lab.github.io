@@ -51,7 +51,7 @@ const greating = () => {
 }
 
 // redirit interative function --
-// url parameter
+// url parameter --
 const urlP = () => {
 
 	console.log('into url');
