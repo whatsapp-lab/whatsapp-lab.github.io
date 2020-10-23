@@ -35,6 +35,21 @@ const btnEdit = document.querySelector('#btnEdit');
 
 
 // FUNCTIONS
+// greating of the day
+const greating = () => {
+    const now = new Date();
+    hours = now.getHours();
+    let great;
+
+    if (hours >= 0 && hours < 12) {
+        great = 'bom dia';
+    } else if (hours >= 12 && hours < 18) {
+        great = 'boa tarde';
+    } else if (hours >= 18 && hours < 24) {
+        great = 'boa noite';
+    }
+    return great;
+}
 
 // redirit interative function
 // url parameter
@@ -103,21 +118,7 @@ const validate = (evt) => {
     }
 }
 
-// greating of the day
-const greating = () => {
-    const now = new Date();
-    hours = now.getHours();
-    let great;
 
-    if (hours >= 0 && hours < 12) {
-        great = 'bom dia';
-    } else if (hours >= 12 && hours < 18) {
-        great = 'boa tarde';
-    } else if (hours >= 18 && hours < 24) {
-        great = 'boa noite';
-    }
-    return great;
-}
 
 // replace--black-space
 const replaceSpace = (txt) => {
