@@ -50,7 +50,7 @@ const greating = () => {
     return great;
 }
 
-// redirit interative function
+// redirit interative function --
 // url parameter
 const urlP = () => {
 
