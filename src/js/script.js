@@ -40,7 +40,6 @@ const greating = () => {
     const now = new Date();
     hours = now.getHours();
     let great;
-
     if (hours >= 0 && hours < 12) {
         great = 'bom dia';
     } else if (hours >= 12 && hours < 18) {
