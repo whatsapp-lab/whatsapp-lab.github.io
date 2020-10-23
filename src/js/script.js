@@ -61,9 +61,7 @@ const urlP = () => {
     const urlParams = new URLSearchParams(queryString);
 
     if(urlParams.has('p')) {
-        
         let phoneUrl = urlParams.get('p');
-        
         if(urlParams.has('text')){
             window.location.replace(`https://wa.me/${phoneUrl}?text=Oi,%20${greating}`);
         } else {
