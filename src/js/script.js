@@ -50,15 +50,11 @@ const urlP = () => {
         let phoneUrl = urlParams.get('p');
         
         if(urlParams.has('text')){
-
             window.location.replace(`https://wa.me/${phoneUrl}?text=Oi,%20${greating}`);
-
         } else {
-        	
         	let nameUrl = urlParams.get('text');
             window.location.replace(`https://wa.me/${phoneUrl}?text=Oi%20${nameUrl},%20${greating}`);
         }
-
     } else {
     	console.log('somethin went wrong --');
     }
