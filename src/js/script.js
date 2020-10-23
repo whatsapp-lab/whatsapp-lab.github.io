@@ -45,8 +45,9 @@ const greating = () => {
     return great;
 }
 
-// redirit interative function --
-// url parameter --
+// redirit interative function 
+// url parameter
+
 const urlP = () => {
 
     const queryString = window.location.search;
