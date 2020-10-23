@@ -54,21 +54,19 @@ const greating = () => {
 // url parameter --
 const urlP = () => {
 
-	console.log('into url');
-    // ?name=&phone=
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
 
     if(urlParams.has('p')) {
         let phoneUrl = urlParams.get('p');
-        if(urlParams.has('text')){
-            window.location.replace(`https://wa.me/${phoneUrl}?text=Oi,%20${greating()}`);
-        } else {
-        	let nameUrl = urlParams.get('text');
+        if(urlParams.has('n')){
+            let nameUrl = urlParams.get('n');
             window.location.replace(`https://wa.me/${phoneUrl}?text=Oi%20${nameUrl},%20${greating()}`);
+        } else {
+            window.location.replace(`https://wa.me/${phoneUrl}?text=Oi,%20${greating()}`);
         }
     } else {
-    	console.log('somethin went wrong --');
+    	console.log('-- new --');
     }
 }
 
@@ -187,19 +185,20 @@ const crtLink = () => {
                     // especial
 
                     if (DOM.name.value) {
-                        textInt = DOM.name.value;
+                        host = `https://whatsapp-lab.github.io?p=${DOM.phone.value}&n=${DOM.name.value}`;
                     } else {
-                        textInt = ``;
+                        host = `https://whatsapp-lab.github.io?p=${DOM.phone.value}`;
                     }
-                    host = 'whatsapp-lab.github.io/?p=';
+                    
                     break;
+
                 case 2:
                     if (DOM.name.value) {
                         textInt = replaceSpace(`${name.value} gostaria de falar com você`);
                     } else {
                         textInt = `Gostaria%20de%20falar%20com%20você`;
                     }
-                    host = 'wa.me/';
+                    host = `https://wa.me/${DOM.phone.value}?text=${textInt}`;
                     break;
                 case 3:
                     if(DOM.name.value){
@@ -207,9 +206,12 @@ const crtLink = () => {
                     } else {
                         textInt = `Preciso%20falar%20com%20você`;
                     }
-                    host = 'wa.me/';
+                    host = `https://wa.me/${DOM.phone.value}?text=${textInt}`;
                     break;
             }
+
+            let linkA = `https://wa.me/${DOM.phone.value}?text=${textInt}`;
+            let linkB = `https://whatsapp-lab.github.io?p=${DOM.phone.value}&n=${DOM.name.value}`;
 
                 
             let html = `<div class="col-12">
