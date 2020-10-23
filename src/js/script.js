@@ -1,16 +1,11 @@
 /*
 **
 ** by @adrielALVES
-** 2020/10
+** upp -- 369
+**
 */
 
-/**
- * att -- flag PT/EN
- */
-
 console.log('\n @@-- aDR --@@ \n $$$$$$$$$$$');
-
-// DOM
 
 const DOM = {
     phone: document.querySelector('#phone'),
@@ -113,8 +108,6 @@ const validate = (evt) => {
     }
 }
 
-
-
 // replace--black-space
 const replaceSpace = (txt) => {
     return txt.replace(/\s/g, "%20");
@@ -168,7 +161,6 @@ const crtLink = () => {
                 <button type="button" class="btn btn-outline-primary btn-sm my-2"><i class="far fa-user-circle"></i>
                     ADICIONAR A UMA PAGINA DE CONTATO</button>
             </div>`;
-
 
             document.querySelector('#linkContainer').innerHTML = ``;
             document.querySelector('#linkContainer').insertAdjacentHTML('beforeend', html);
@@ -232,9 +224,6 @@ const crtLink = () => {
 
         document.querySelector('#linkContainer').innerHTML = ``;
         document.querySelector('#linkContainer').insertAdjacentHTML('beforeend', html);
-
-            
-
             
         }
 
