@@ -203,17 +203,15 @@ const crtLink = () => {
                     break;
             }
 
-            let linkA = `https://wa.me/${DOM.phone.value}?text=${textInt}`;
-            let linkB = `https://whatsapp-lab.github.io?p=${DOM.phone.value}&n=${DOM.name.value}`;
-
+            
                 
             let html = `<div class="col-12">
             <h5>Link</h5>
             <div class="my-a border" id="linkSection">
             
                 <i class="fas fa-link"></i>
-                <a href="https://${host}${phone.value}?text=${textInt}"  target="_blank" class="my-a" style="display:inline-block !important">
-                    <h5 id="linkGerado">https://${host}${phone.value}?text=${textInt}</h5>
+                <a href="${host}"  target="_blank" class="my-a" style="display:inline-block !important">
+                    <h5 id="linkGerado">${host}</h5>
                 </a>
             </div>
             <button onclick="copyText()" type="button" class="btn btn-outline-primary btn-sm my-2" id="btnCopy" ><i class="far fa-copy"></i>
