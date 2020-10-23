@@ -39,22 +39,28 @@ const btnEdit = document.querySelector('#btnEdit');
 // redirit interative function
 // url parameter
 const urlP = () => {
+
+	console.log('into url');
     // ?name=&phone=
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
 
-    if(urlParams.has('p') && urlParams.has('text')) {
-        let nameUrl = urlParams.get('text');
+    if(urlParams.has('p')) {
+        
         let phoneUrl = urlParams.get('p');
         
-        if(isNaN(name)){
+        if(urlParams.has('text')){
+
             window.location.replace(`https://wa.me/${phoneUrl}?text=Oi,%20${greating}`);
+
         } else {
+        	
+        	let nameUrl = urlParams.get('text');
             window.location.replace(`https://wa.me/${phoneUrl}?text=Oi%20${nameUrl},%20${greating}`);
         }
 
     } else {
-      console.log('run');
+    	console.log('somethin went wrong --');
     }
 }
 
